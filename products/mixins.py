@@ -12,6 +12,6 @@ class AuthRedirectMixin(object):
 
 
 class LoginRequiredMixin(object):
-    @method_decorator(login_required())
+    @method_decorator(login_required(login_url='/'))
     def dispatch(self, request, *args, **kwargs):
         return super(LoginRequiredMixin, self).dispatch(request, *args, **kwargs)

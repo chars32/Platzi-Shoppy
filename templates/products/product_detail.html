@@ -5,16 +5,19 @@
     <meta charset="UTF-8">
     <title>{{ product.name }}</title>
     <link rel="stylesheet" href="{% static 'css/base.css' %}">
+    <link rel="stylesheet" href="{% static 'css/base_dos.css' %}">
 </head>
 <body>
     <h1>{{ product.name }}</h1>
     <h2>{{ product.description }}</h2>
-
     <p>
-        {{ product.category }} |
-        {{ product.price }}
+        {{product.category}} |
+        {{product.price}}
     </p>
 
-    <img src="{{ product.image.url }}" alt="">
+    <img src="{{ product.image.url  }}" alt="">
+
+    <a href="{% url "products:edit" pk=product.pk %}">Editar</a>
+    <a href="{% url "products:delete" pk=product.pk %}">Borrar</a>
 </body>
 </html>
